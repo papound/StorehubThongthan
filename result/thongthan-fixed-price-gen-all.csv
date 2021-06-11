@@ -1,0 +1,31 @@
+SKU,Parent Product SKU,Product Name,Category,Price Type,Unit,Price,Cost,Supplier Price,Product Tags,Inventory Type,Track Stock Levels,Barcode,Variant Name 1,Variant Value 1,Variant Name 2,Variant Value 2,Variant Name 3,Variant Value 3,Thongthan_Quantity,Warning Stock Level,Ideal Stock Level,Supplier,Tax Name,Store Credits,Kitchen Printer,Product Id
+#Required (Must be unique),,Required,Optional,Required (Fixed/Variable/Unit),Required if the price type is Unit. Leave this field empty if the price Type is either Fixed or Variable.,Optional; 0 by default,Optional,Optional(this field can only be modified if 'Fix Supplier Price' is selected for at least one store in Account Settings),Optional; use semicolon ( ; ) to separate multiple tags,Optional(Simple/Composite/Serialized; Simple by default if tracking inventory),Required (0/1),Optional; Must be unique if specified; use semicolon ( ; ) to separate multiple barcodes,,,,,,,Optional; 0 by default if tracking inventory,Optional,Optional,Optional; use semicolon ( ; ) to separate multiple suppliers,Optional,Optional,Optional,Please DO NOT TOUCH this column; as it contains each product's unique reference ID. Doing so will result in unsuccessful import for all products listed in this sheet.
+131015_11_3XL,,131015_11_3XL เชิ้ตผู้หญิงลายริ้วแขนยาว,Shirts,Fixed,,515.0,515.0,,,,1,131015_11_3XL,,,,,,,0.00,,,,,,,603941670653c9000740bc76
+134061E_5_2XL,,134061E_5_2XL เชิ้ตผู้หญิงผ้าพื้นแขนยาว,Shirts,Fixed,,399.0,399.0,,,,1,134061E_5_2XL,,,,,,,32.00,,,,,,,602157a74af5120006bab4db
+134061_5_2XL,,134061_5_2XL เชิ้ตผู้หญิงผ้าพื้นแขนยาว,Shirts,Fixed,,399.0,399.0,,,,1,134061_5_2XL,,,,,,,0.00,,,,,,,6039419d0653c9000740c06f
+134078E_4_2XL,,134078E_4_2XL เชิ้ตผู้หญิงผ้าพื้นแขนยาว,Shirts,Fixed,,495.0,495.0,,,,1,134078E_4_2XL,,,,,,,0.00,,,,,,,602157ab4af5120006bab53e
+134078_4_2XL,,134078_4_2XL เชิ้ตผู้หญิงผ้าพื้นแขนยาว,Shirts,Fixed,,495.0,495.0,,,,1,134078_4_2XL,,,,,,,8.00,,,,,,,602157aa4af5120006bab52c
+134105_2_2XL,,134105_2_2XL เชิ้ตผู้หญิงผ้าพื้นแขนยาว,Shirts,Fixed,,525.0,525.0,,,,1,134105_2_2XL,,,,,,,12.00,,,,,,,602157af4af5120006bab5a1
+134134E_0_2XL,,134134E_0_2XL เชิ้ตผู้หญิงผ้าพื้นแขนยาว,Shirts,Fixed,,525.0,525.0,,,,1,134134E_0_2XL,,,,,,,3.00,,,,,,,602157b14af5120006bab5d4
+134134_0_2XL,,134134_0_2XL เชิ้ตผู้หญิงผ้าพื้นแขนยาว,Shirts,Fixed,,525.0,525.0,,,,1,134134_0_2XL,,,,,,,12.00,,,,,,,602157b14af5120006bab5c8
+134465_16_2XL,,134465_16_2XL เชิ้ตผู้หญิงผ้าพื้นแขนยาว,Shirts,Fixed,,495.0,495.0,,,,1,134465_16_2XL,,,,,,,3.00,,,,,,,602157bb4af5120006bab6c7
+134465_4_2XL,,134465_4_2XL เชิ้ตผู้หญิงผ้าพื้นแขนยาว,Shirts,Fixed,,495.0,495.0,,,,1,134465_4_2XL,,,,,,,8.00,,,,,,,602157bc4af5120006bab6d6
+134465_5_2XL,,134465_5_2XL เชิ้ตผู้หญิงผ้าพื้นแขนยาว,Shirts,Fixed,,495.0,495.0,,,,1,134465_5_2XL,,,,,,,9.00,,,,,,,602157bc4af5120006bab6e5
+134813_32_2XL,,134813_32_2XL เชิ้ตผู้หญิงผ้าพื้นแขนยาว,Shirts,Fixed,,399.0,399.0,,,,1,134813_32_2XL,,,,,,,43.00,,,,,,,602157d04af5120006bab8cb
+231187_2_2XL,,231187_2_2XL เชิ้ตผู้หญิงลายริ้วแขนสั้น,Shirts,Fixed,,435.0,435.0,,,,1,231187_2_2XL,,,,,,,0.00,,,,,,,603a0792b9c13c0006e2e321
+231187_4_2XL,,231187_4_2XL เชิ้ตผู้หญิงลายริ้วแขนสั้น,Shirts,Fixed,,435.0,435.0,,,,1,231187_4_2XL,,,,,,,3.00,,,,,,,602158264af5120006bac11d
+231187_5_2XL,,231187_5_2XL เชิ้ตผู้หญิงลายริ้วแขนสั้น,Shirts,Fixed,,435.0,435.0,,,,1,231187_5_2XL,,,,,,,10.00,,,,,,,602158274af5120006bac12f
+231187_8_2XL,,231187_8_2XL เชิ้ตผู้หญิงลายริ้วแขนสั้น,Shirts,Fixed,,435.0,435.0,,,,1,231187_8_2XL,,,,,,,2.00,,,,,,,602158284af5120006bac141
+231188_10_2XL,,231188_10_2XL เชิ้ตผู้หญิงลายริ้วแขนสั้น,Shirts,Fixed,,465.0,465.0,,,,1,231188_10_2XL,,,,,,,11.00,,,,,,,602158284af5120006bac14d
+231188_4_2XL,,231188_4_2XL เชิ้ตผู้หญิงลายริ้วแขนสั้น,Shirts,Fixed,,465.0,465.0,,,,1,231188_4_2XL,,,,,,,8.00,,,,,,,602158294af5120006bac15f
+234139_23_2XL,,234139_23_2XL เชิ้ตผู้หญิงผ้าพื้นแขนสั้น,Shirts,Fixed,,365.0,365.0,,,,1,234139_23_2XL,,,,,,,9.00,,,,,,,6021582a4af5120006bac171
+234813_0_2XL,,234813_0_2XL เชิ้ตผู้หญิงผ้าพื้นแขนสั้น,Shirts,Fixed,,365.0,365.0,,,,1,234813_0_2XL,,,,,,,18.00,,,,,,,6021582b4af5120006bac186
+234813_10_2XL,,234813_10_2XL เชิ้ตผู้หญิงผ้าพื้นแขนสั้น,Shirts,Fixed,,365.0,365.0,,,,1,234813_10_2XL,,,,,,,21.00,,,,,,,6021582b4af5120006bac198
+234813_23_2XL,,234813_23_2XL เชิ้ตผู้หญิงผ้าพื้นแขนสั้น,Shirts,Fixed,,365.0,365.0,,,,1,234813_23_2XL,,,,,,,28.00,,,,,,,6021582d4af5120006bac1b9
+234813_25_2XL,,234813_25_2XL เชิ้ตผู้หญิงผ้าพื้นแขนสั้น,Shirts,Fixed,,365.0,365.0,,,,1,234813_25_2XL,,,,,,,20.00,,,,,,,6021582d4af5120006bac1cb
+234813_2_2XL,,234813_2_2XL เชิ้ตผู้หญิงผ้าพื้นแขนสั้น,Shirts,Fixed,,365.0,365.0,,,,1,234813_2_2XL,,,,,,,15.00,,,,,,,6021582c4af5120006bac1aa
+234813_4_2XL,,234813_4_2XL เชิ้ตผู้หญิงผ้าพื้นแขนสั้น,Shirts,Fixed,,365.0,365.0,,,,1,234813_4_2XL,,,,,,,13.00,,,,,,,6021582e4af5120006bac1dd
+234813_5_2XL,,234813_5_2XL เชิ้ตผู้หญิงผ้าพื้นแขนสั้น,Shirts,Fixed,,365.0,365.0,,,,1,234813_5_2XL,,,,,,,56.00,,,,,,,6021582f4af5120006bac1ef
+244706_0_2XL,,244706_0_2XL เชิ้ตผู้ชายผ้าพื้นแขนสั้น,Shirts,Fixed,,465.0,465.0,,,,1,244706_0_2XL,,,,,,,0.00,,,,,,,603a07f2b9c13c0006e2eaf0
+334813_5_2XL,,334813_5_2XL เชิ้ตผู้หญิงผ้าพื้นแขนสามส่วน,Shirts,Fixed,,399.0,399.0,,,,1,334813_5_2XL,,,,,,,60.00,,,,,,,6021584f4af5120006bac513
+335183_4_2XL,,335183_4_2XL เชิ้ตผู้หญิงผ้าพิมสามส่วน,Shirts,Fixed,,495.0,495.0,,,,1,335183_4_2XL,,,,,,,3.00,,,,,,,602158504af5120006bac537
