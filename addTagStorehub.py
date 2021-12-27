@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import os
 import csv
 import codecs
@@ -18,7 +19,7 @@ class AddTagStorehubThongthan():
         csvFiles = [f for f in listdir("./input/") if (isfile(join("./input/", f)) and self.isCSVFile(self, f))]
         print(csvFiles)
         storehubDatas = None
-        csvData = '''SKU,Parent Product SKU,Product Name,Category,Price Type,Unit,Price,Discounted Price,Cost,Supplier Price,Product Tags,Inventory Type,Track Stock Levels,Barcode,"Thongthan_Quantity","Thongthan_Warning Stock Level","Thongthan_Ideal Stock Level","Highbury-Platinum_Quantity","Highbury-Platinum_Warning Stock Level","Highbury-Platinum_Ideal Stock Level","Sale_Quantity","Sale_Warning Stock Level","Sale_Ideal Stock Level","Presale_Quantity","Presale_Warning Stock Level","Presale_Ideal Stock Level",Supplier,Tax Name,Store Credits,Kitchen Printer,Product Id\n#Required(Must be unique),,Required,Optional,Required(Fixed/Variable/Unit),Required if the price type is Unit. Leave this field empty if the price Type is either Fixed or Variable.,Optional,Optional,Optional,Optional(this field can only be modified if 'Fix Supplier Price' is selected for at least one store in Account Settings),Optional(Use ; to separate multiple tags),Optional(Simple/Composite/Serialized; Simple by default if tracking inventory),Required(0/1),Optional(Must be unique if specified),Optional; 0 by default if tracking inventory,Optional,Optional,Optional; 0 by default if tracking inventory,Optional,Optional,Optional; 0 by default if tracking inventory,Optional,Optional,Optional; 0 by default if tracking inventory,Optional,Optional,Optional(Use ; to separate multiple suppliers),Optional,Optional,Optional,Please DO NOT TOUCH this column; as it contains each product's unique reference ID. Doing so will result in unsuccessful import for all products listed in this sheet.\n'''
+        csvData = '''SKU,Parent Product SKU,Product Name,Category,Price Type,Unit,Price,Discounted Price,Cost,Supplier Price,Product Tags,Inventory Type,Track Stock Levels,Barcode,Thongthan_Quantity,Thongthan_Warning Stock Level,Thongthan_Ideal Stock Level,Highbury-Platinum_Quantity,Highbury-Platinum_Warning Stock Level,Highbury-Platinum_Ideal Stock Level,Sale_Quantity,Sale_Warning Stock Level,Sale_Ideal Stock Level,Presale_Quantity,Presale_Warning Stock Level,Presale_Ideal Stock Level,OnlineSale_Quantity,OnlineSale_Warning Stock Level,OnlineSale_Ideal Stock Level,Supplier,Tax Name,Store Credits,Kitchen Printer,Product Id\nSKU,Parent Product SKU,Product Name,Category,Price Type,Unit,Price,Discounted Price,Cost,Supplier Price,Product Tags,Inventory Type,Track Stock Levels,Barcode,Thongthan_Quantity,Thongthan_Warning Stock Level,Thongthan_Ideal Stock Level,Highbury-Platinum_Quantity,Highbury-Platinum_Warning Stock Level,Highbury-Platinum_Ideal Stock Level,Sale_Quantity,Sale_Warning Stock Level,Sale_Ideal Stock Level,Presale_Quantity,Presale_Warning Stock Level,Presale_Ideal Stock Level,OnlineSale_Quantity,OnlineSale_Warning Stock Level,OnlineSale_Ideal Stock Level,Supplier,Tax Name,Store Credits,Kitchen Printer,Product Id\n'''
         try:
             with codecs.open(self.current_stock_price_file_name, encoding='utf-8-sig') as csvfile:
                 storehubDatas = [{k: str(v) for k, v in row.items()} for row in csv.DictReader(csvfile, skipinitialspace=True)]
@@ -35,6 +36,7 @@ class AddTagStorehubThongthan():
             hb_quantity = 'Highbury-Platinum_Quantity'
             s_quantity = 'Sale_Quantity'
             ps_quantity = 'Presale_Quantity'
+            os_quantity = 'OnlineSale_Quantity'
             count = 0
             try:
                 with codecs.open(csvFileName, encoding='utf-8-sig') as csvfile:
@@ -62,7 +64,7 @@ class AddTagStorehubThongthan():
                     for tag in tags:
                         if tag != "":
                             fullTag += tag
-                    csvLine = sData['SKU']+",,"+sData['Product Name']+","+catagories+",Fixed,,"+sData['Price']+",,"+sData['Price']+",,"+fullTag+",,1,"+sData['SKU']+","+sData[tt_quantity]+",,,"+sData[hb_quantity]+",,,"+sData[s_quantity]+",,,"+sData[ps_quantity]+",,,,,,,"+sData['Product Id']+"\n"
+                    csvLine = sData['SKU']+",,"+sData['Product Name']+","+catagories+",Fixed,,"+sData['Price']+",,"+sData['Price']+",,"+fullTag+",,1,"+sData['SKU']+","+sData[tt_quantity]+",,,"+sData[hb_quantity]+",,,"+sData[s_quantity]+",,,"+sData[ps_quantity]+",,,"+sData[os_quantity]+",,,,,,,"+sData['Product Id']+"\n"
                     csvData += csvLine
                     count+=1
                 print("----------------------------------")
