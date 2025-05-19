@@ -53,11 +53,17 @@ class AddTagStorehubThongthan():
                     #length_tags
                     shirt_length_tags = "แขนสั้น;" if sData['Product Name'].find("แขนสั้น") != -1 else "แขนยาว;" if sData['Product Name'].find("แขนยาว") != -1 else "แขนสามส่วน;" if sData['Product Name'].find("สามส่วน") != -1 else ""
                     kangkeng_length_tags = "ขาสั้น;" if sData['Product Name'].find("สั้น") != -1 else "ขายาว;" if sData['Product Name'].find("ยาว") != -1 else "ขาสามส่วน;" if sData['Product Name'].find("สามส่วน") != -1 else ""
+                    #colour_tags
+                    sku_tags = sData['SKU'].split("_")
+                    colour_tags = ""
                     tags.append(gender_tags)
                     tags.append(shirt_tags)
                     tags.append(stripes_tags)
                     if shirt_tags.find('') != -1: 
                         tags.append(shirt_length_tags)
+                        if len(sku_tags) == 3 and (sData['Product Name'].find("เชิ้ต") != -1 or sData['Product Name'].find("เข็มขัด") != -1):
+                            colour_tags = "สี"+sku_tags[1]+";"
+                            tags.append(colour_tags)
                     else:
                         tags.append(kangkeng_length_tags)
                     fullTag = ""
