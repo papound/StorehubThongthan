@@ -15,6 +15,54 @@ class AddTagStorehubThongthan():
 
     current_stock_price_file_name = "./input/current_thongthan_stock_price.csv"
 
+    def get_color_info(code):
+        try:
+            color_code_map = {
+                                0: {"thai": "ขาว", "english": "white", "hex": "#FFFFFF"},
+                                1: {"thai": "ครีม", "english": "cream", "hex": "#FFFDD0"},
+                                2: {"thai": "ฟ้า", "english": "sky blue", "hex": "#87CEEB"},
+                                3: {"thai": "ชมพู", "english": "pink", "hex": "#FFC0CB"},
+                                4: {"thai": "กรม", "english": "navy", "hex": "#000080"},
+                                5: {"thai": "ดำ", "english": "black", "hex": "#000000"},
+                                6: {"thai": "เทา", "english": "gray", "hex": "#808080"},
+                                7: {"thai": "น้ำตาล", "english": "brown", "hex": "#8B4513"},
+                                8: {"thai": "ฟ้าเข้ม", "english": "dark sky blue", "hex": "#4682B4"},
+                                9: {"thai": "ม่วง", "english": "purple", "hex": "#800080"},
+                                10: {"thai": "แดง", "english": "red", "hex": "#FF0000"},
+                                11: {"thai": "เขียว", "english": "green", "hex": "#008000"},
+                                12: {"thai": "ส้ม", "english": "orange", "hex": "#FFA500"},
+                                13: {"thai": "ฟ้าทะเล", "english": "sea blue", "hex": "#5F9EA0"},
+                                14: {"thai": "โอรส", "english": "peach", "hex": "#FFDAB9"},
+                                15: {"thai": "กรมเข้ม", "english": "dark navy", "hex": "#000066"},
+                                16: {"thai": "บานเย็น", "english": "magenta", "hex": "#FF00FF"},
+                                17: {"thai": "เลือดหมู", "english": "maroon", "hex": "#800000"},
+                                18: {"thai": "น้ำตาลอมเทา", "english": "grayish brown", "hex": "#A0522D"},
+                                19: {"thai": "ม่วงเข้ม", "english": "dark purple", "hex": "#4B0082"},
+                                20: {"thai": "กากี", "english": "khaki", "hex": "#F0E68C"},
+                                21: {"thai": "เทาอ่อน", "english": "light gray", "hex": "#D3D3D3"},
+                                22: {"thai": "ฟ้าอมน้ำตาล", "english": "sky brownish", "hex": "#B0C4DE"},
+                                23: {"thai": "เหลืองเข้ม", "english": "dark yellow", "hex": "#FFD700"},
+                                24: {"thai": "น้ำตาลทอง", "english": "golden brown", "hex": "#996515"},
+                                25: {"thai": "เทาดำเข้ม", "english": "dark charcoal", "hex": "#2F4F4F"},
+                                26: {"thai": "ฟ้าเทา", "english": "bluish gray", "hex": "#6699CC"},
+                                27: {"thai": "น้ำตาลเข้ม", "english": "dark brown", "hex": "#5C4033"},
+                                28: {"thai": "ขี้ม้า", "english": "earth brown", "hex": "#70543E"},
+                                29: {"thai": "น้ำตาลทอง", "english": "gold brown", "hex": "#996515"},
+                                32: {"thai": "ฟ้าอ่อน", "english": "light blue", "hex": "#ADD8E6"},
+                                33: {"thai": "เขียวอ่อน", "english": "light green", "hex": "#90EE90"},
+                                34: {"thai": "เทาม่วง", "english": "purple gray", "hex": "#8B8BAE"},
+                                35: {"thai": "เขียวคล้ำ", "english": "dark green", "hex": "#006400"},
+                                36: {"thai": "เขียวหัวเป็ด", "english": "teal green", "hex": "#006A4E"},
+                                37: {"thai": "เหลืองมันปู", "english": "mustard yellow", "hex": "#E1B500"},
+                                38: {"thai": "กรมเทา", "english": "gray navy", "hex": "#343B4C"},
+                                39: {"thai": "ชมพูเข้ม", "english": "deep pink", "hex": "#FF1493"},
+                                40: {"thai": "ครีมอ่อน", "english": "light cream", "hex": "#FFF8DC"}
+                            }
+            code = int(code)
+            return color_code_map.get(code, {"thai": "", "english": "", "hex": ""})
+        except ValueError:
+            return {"thai": "", "english": "", "hex": ""}
+
     def doAddTagStorehubThongthan():
         csvFiles = [f for f in listdir("./input/") if (isfile(join("./input/", f)) and self.isCSVFile(self, f))]
         print(csvFiles)
@@ -56,6 +104,7 @@ class AddTagStorehubThongthan():
                     #colour_tags
                     sku_tags = sData['SKU'].split("_")
                     colour_tags = ""
+                    colour_thai_tags = ""
                     tags.append(gender_tags)
                     tags.append(shirt_tags)
                     tags.append(stripes_tags)
@@ -63,7 +112,14 @@ class AddTagStorehubThongthan():
                         tags.append(shirt_length_tags)
                         if len(sku_tags) == 3 and (sData['Product Name'].find("เชิ้ต") != -1 or sData['Product Name'].find("เข็มขัด") != -1):
                             colour_tags = "สี"+sku_tags[1]+";"
+                            colour_thai = self.get_color_info(sku_tags[1])["thai"]
+                            colour_eng = self.get_color_info(sku_tags[1])["english"]
                             tags.append(colour_tags)
+                            if (len(colour_thai) > 0):
+                                colour_thai_tags = "สี"+colour_thai+";"
+                                colour_eng_tags = "สี"+colour_eng+";"
+                                tags.append(colour_thai_tags)
+                                tags.append(colour_eng_tags)
                     else:
                         tags.append(kangkeng_length_tags)
                     fullTag = ""
